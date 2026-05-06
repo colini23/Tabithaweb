@@ -10,8 +10,8 @@
     --accent-color: #d4af37; /* Gold accent */
     
     /* Typography */
-    --font-heading: 'Cormorant Garamond', serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Instrument Serif', serif;
+    --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     
     /* Transitions */
     --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -389,6 +389,21 @@ a:hover {
 .btn-buy:hover {
     background-color: var(--accent-color);
     color: var(--bg-color);
+}
+
+.product-card.sold img {
+    filter: grayscale(1) brightness(0.6);
+}
+
+.btn-sold {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    cursor: default;
 }
 
 /* =========================================
