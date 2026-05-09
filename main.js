@@ -155,9 +155,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     purchase_units: [{
                         description: itemName,
                         amount: {
+                            currency_code: 'USD',
                             value: price
                         }
-                    }]
+                    }],
+                    application_context: {
+                        shipping_preference: 'GET_FROM_FILE'
+                    }
                 });
             },
             onApprove: (data, actions) => {
