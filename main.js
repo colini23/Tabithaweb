@@ -157,10 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         amount: {
                             currency_code: 'USD',
                             value: price
+                        },
+                        shipping: {
+                            type: 'SHIPPING'
                         }
                     }],
                     application_context: {
-                        shipping_preference: 'GET_FROM_FILE'
+                        shipping_preference: 'GET_FROM_FILE',
+                        user_action: 'PAY_NOW'
                     }
                 });
             },
@@ -176,4 +180,24 @@ document.addEventListener('DOMContentLoaded', () => {
     initPayPalButton('paypal-button-container-1');
     initPayPalButton('paypal-button-container-2');
     initPayPalButton('paypal-button-container-3');
+
+    // --- Mobile Menu Toggle ---
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinksList = document.querySelector('.nav-links');
+    
+    if (mobileMenu) {
+        mobileMenu.addEventListener('click', () => {
+            navLinksList.classList.toggle('active');
+            mobileMenu.classList.toggle('is-active');
+        });
+        
+        // Close menu when a link is clicked
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinksList.classList.remove('active');
+                mobileMenu.classList.remove('is-active');
+            });
+        });
+    }
 });
