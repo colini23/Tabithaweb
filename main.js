@@ -170,7 +170,10 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             onApprove: (data, actions) => {
                 return actions.order.capture().then((details) => {
-                    alert('Transaction completed by ' + details.payer.name.given_name + '! Check your email for confirmation.');
+                    const shipping = details.purchase_units[0].shipping;
+                    const address = shipping ? `${shipping.address.address_line_1}, ${shipping.address.admin_area_2}` : 'No address captured';
+                    
+                    alert('Transaction completed!\n\nBuyer: ' + details.payer.name.given_name + '\nShipping to: ' + address + '\n\nPlease check your PayPal dashboard for full details.');
                 });
             }
         }).render(`#${containerId}`);

@@ -401,7 +401,17 @@ a:hover {
     color: var(--accent-color);
     font-size: 1.2rem;
     font-family: var(--font-heading);
+    margin-bottom: 0.5rem;
+}
+
+.shipping-notice {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-color);
     margin-bottom: 1.5rem;
+    font-weight: 500;
+    opacity: 0.8;
 }
 
 .size-selector {
