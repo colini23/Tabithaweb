@@ -203,4 +203,43 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // --- Review Form Submission (Formspree AJAX) ---
+    const reviewForm = document.getElementById('review-form');
+    const reviewSuccess = document.getElementById('review-success');
+
+    if (reviewForm) {
+        reviewForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = reviewForm.querySelector('.btn-submit-review');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            const formData = new FormData(reviewForm);
+
+            try {
+                const response = await fetch(reviewForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    reviewForm.style.display = 'none';
+                    reviewSuccess.style.display = 'block';
+                } else {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Review';
+                    alert('There was an issue submitting your review. Please try again.');
+                }
+            } catch (error) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Review';
+                alert('Connection error. Please check your internet and try again.');
+            }
+        });
+    }
 });

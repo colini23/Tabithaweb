@@ -615,6 +615,225 @@ footer {
 }
 
 /* =========================================
+   Testimonials
+   ========================================= */
+.testimonials-section {
+    padding: 8rem 5%;
+    background-color: var(--bg-color);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: var(--surface-color);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.testimonial-stars {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.testimonial-quote {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.author-name {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--text-primary);
+}
+
+.author-location {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   Review Submission Form
+   ========================================= */
+.review-form-wrapper {
+    max-width: 700px;
+    margin: 5rem auto 0;
+    background-color: var(--surface-color);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 3rem 2.5rem;
+    text-align: center;
+}
+
+.review-form-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.review-form-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+}
+
+.review-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .review-form .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.review-form .form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.review-form input[type="text"],
+.review-form textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+    padding: 0.8rem 0;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    resize: none;
+}
+
+.review-form input[type="text"]:focus,
+.review-form textarea:focus {
+    border-color: var(--accent-color);
+}
+
+.review-form textarea {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 1rem;
+    margin-top: 0.5rem;
+    line-height: 1.6;
+}
+
+.review-form textarea:focus {
+    border-color: var(--accent-color);
+}
+
+.star-rating-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.star-rating {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.star-rating .star {
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+    user-select: none;
+}
+
+.star-rating .star.active {
+    color: var(--accent-color);
+}
+
+.star-rating .star.hover {
+    color: var(--accent-color);
+    transform: scale(1.15);
+}
+
+.btn-submit-review {
+    display: inline-block;
+    padding: 0.9rem 2.5rem;
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.btn-submit-review:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.btn-submit-review:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.review-success {
+    text-align: center;
+    padding: 2rem 0;
+    animation: fadeUp 0.6s ease forwards;
+}
+
+.review-success .success-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.review-success p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* =========================================
    Lightbox
    ========================================= */
 .lightbox {
