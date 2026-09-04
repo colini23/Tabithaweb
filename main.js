@@ -179,10 +179,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }).render(`#${containerId}`);
     };
 
-    // Initialize buttons for the 3 prints
+    // Initialize buttons for the prints
     initPayPalButton('paypal-button-container-1');
     initPayPalButton('paypal-button-container-2');
     initPayPalButton('paypal-button-container-3');
+    initPayPalButton('paypal-button-container-4');
 
     // --- Mobile Menu Toggle ---
     const mobileMenu = document.getElementById('mobile-menu');
