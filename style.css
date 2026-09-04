@@ -511,22 +511,27 @@ a:hover {
    Contact Section
    ========================================= */
 .contact-section {
-    padding: 10rem 5%;
+    padding: 4rem 5%;
     text-align: center;
     background-color: var(--bg-color);
 }
 
+.contact-section .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
 .contact-content p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .email-link {
     font-family: var(--font-heading);
-    font-size: 3rem;
+    font-size: 1.8rem;
     display: block;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     position: relative;
     display: inline-block;
 }
@@ -534,7 +539,7 @@ a:hover {
 .email-link::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -5px;
     left: 0;
     width: 0%;
     height: 1px;
@@ -555,22 +560,27 @@ a:hover {
 .social-links a {
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 /* =========================================
    Newsletter Section
    ========================================= */
 .newsletter-section {
-    padding: 8rem 5%;
+    padding: 4rem 5%;
     text-align: center;
     background-color: var(--surface-color);
 }
 
+.newsletter-section .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
 .newsletter-form {
     display: flex;
-    max-width: 500px;
-    margin: 3rem auto 0;
+    max-width: 450px;
+    margin: 1.5rem auto 0;
     gap: 1rem;
 }
 
@@ -580,9 +590,9 @@ a:hover {
     border: none;
     border-bottom: 1px solid rgba(255,255,255,0.2);
     color: var(--text-primary);
-    padding: 0.8rem 0;
+    padding: 0.6rem 0;
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 0.95rem;
     outline: none;
     transition: border-color 0.3s ease;
 }
