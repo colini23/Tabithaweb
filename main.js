@@ -82,14 +82,14 @@ document.addEventListener('DOMContentLoaded', () => {
             
             lightboxImg.src = img.src;
             lightboxCaption.innerText = title;
-            lightbox.style.display = 'block';
+            lightbox.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent scrolling
         });
     });
 
     // Close lightbox
     const closeLightbox = () => {
-        lightbox.style.display = 'none';
+        lightbox.classList.remove('active');
         document.body.style.overflow = 'auto';
     };
 
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightbox.style.display === 'block') {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
             closeLightbox();
         }
     });
